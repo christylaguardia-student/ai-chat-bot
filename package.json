@@ -1,0 +1,25 @@
+{
+  "name": "ai-chat-bot",
+  "version": "1.0.0",
+  "description": "A simple AI chat bot with speech recognition.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christylaguardia/ai-chat-bot.git"
+  },
+  "author": "Christy La Guardia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christylaguardia/ai-chat-bot/issues"
+  },
+  "homepage": "https://github.com/christylaguardia/ai-chat-bot#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
