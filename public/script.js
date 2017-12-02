@@ -17,17 +17,18 @@ document.querySelector('button').addEventListener('click', () => recognition.sta
 recognition.addEventListener('speechstart', () => console.log('speech detected'));
 
 recognition.addEventListener('result', e => {
-  console.log('result detected');
+  console.log('result detected', e.results);
 
-  let last = e.results.length - 1;
-  let text = e.results[last][0].transcript;
-
-  userMessage.textContent = text;
+  // let last = e.results.length - 1;
+  // let text = e.results[last][0].transcript;
+  const text = e.results[0][0].transcript;
+  console.log('text', text);
+  userMessage.textContent = `you: ${text}`;
 
   console.log('confidence', e.results[0][0].confidence);
 
   socket.emit('chat message', text);
-})
+});
 
 recognition.addEventListener('speechend', () => recognition.stop());
 
