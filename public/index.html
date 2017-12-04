@@ -4,74 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  <link rel="stylesheet" href="/style.css">
-  <title>Christy La Guardia's Chat Bot</title>
+  <title>Shopping Chat Bot</title>
 </head>
 <body>
   <section class="section is-vcentered">
-
-    <!-- <div class="hero">
-      <div class="container has-text-centered">
-        <h1 class="title">AI Chat Bot</h1>
-        <p class="subtitle">by Christy La Guardia</p>
-      </div>
-    </div> -->
-
-    <!-- <div class="container">
-      <div class="columns is-mobile is-centered">
-        <div class="column is-half is-narrow">
-          <ul class="field"></ul>
-
-          <div class="field has-addons has-addons-centered">
-            <div class="control">
-              <input class="input" id="user-message" type="text" placeholder="Talk to the bot...">
-            </div>
-            <div class="control">
-              <button class="button is-info" onclick="chat()">
-                Send
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-
     <div class="container is-centered">
-
       <div class="tile is-ancestor">
-        <div class="tile is-parent">
+        <div class="tile is-parent is-4">
           <article class="tile is-child box">
-            <p class="title">Simple Chat Bot</p>
-            <p class="subtitle">by Christy La Guardia</p>
-
-            <p class="field">
-              <a class="button" href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
-                <span class="icon">
-                  <i class="fa fa-github"></i>
-                </span>
-                <span>GitHub</span>
-              </a>
-            </p>
-
             <div class="content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum
-                ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+              <p class="title">Shopping Chat Bot</p>
+              <p class="subtitle">
+                by <a href="http://www.laguardia.io" target="_blank">Christy La Guardia</a>
+              </p>
+              <p>A simple chat bot build using the socket.io real-time engine, a custom Dialogflow AI agent &amp; API and the Bulma CSS framework.</p>
+              <p>
+                <a href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
+                  View my source code on GitHub.
+                </a>
+              </p>
+              <div>
+                <h3>Sample Messages:</h3>
+                <p><span class="tag is-primary is-medium is-rounded">I want to buy a T-Shirt.</span></p>
+                <p><span class="tag is-primary is-medium is-rounded">Track my order.</span></p>
+                <p><span class="tag is-primary is-medium is-rounded">I'm looking for a gift.</span></p>
+                <p><span class="tag is-primary is-medium is-rounded">Cancel my order.</span></p>
+                <p><span class="tag is-primary is-medium is-rounded">Check what's in my cart.</span></p>
+                <p><span class="tag is-primary is-medium is-rounded">Do you have any special offers.</span></p>
+              </div>
+              
             </div>
           </article>
         </div>
 
-        <div class="tile is-parent is-8"> 
+        <div class="tile is-parent is-vertical is-8"> 
           <article class="tile is-child box">
             <div class="content">
-
-              <ul id="messages" class="field"></ul>
-                
-              <div class="field has-addons has-addons-centered">
+              <div class="field has-addons">
                 <div class="control">
-                  <input id="user-message" class="input" type="text" placeholder="Talk to the bot...">
+                  <input id="user-input" class="input" type="text" autocomplete="off" placeholder="Talk to the bot...">
                 </div>
                 <div class="control">
                   <button class="button is-info" onclick="chat()">
@@ -79,7 +51,12 @@
                   </button>
                 </div>
               </div>
+            </div>
+          <!-- </article>
 
+          <article class="tile is-child box"> -->
+            <div class="content">
+              <div id="messages" class="content"></div>
             </div>
           </article>
         </div>
