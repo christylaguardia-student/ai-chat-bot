@@ -1,10 +1,13 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const apiai = require('./lib/apiai');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
+
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
@@ -16,8 +19,7 @@ io.on('connection', socket => {
   socket.on('chat message', userMsg => {
     apiai
       .getBotReply(userMsg)
-      .then(botReply => io.emit('chat message', botReply));
-    
+      .then(botReply => socket.emit('bot reply', botReply));
   });
 
   socket.on('disconnect', () => {
