@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "8.1.x"
+  },
   "name": "ai-chat-bot",
   "version": "1.0.0",
   "description": "A simple AI chat bot with speech recognition.",
