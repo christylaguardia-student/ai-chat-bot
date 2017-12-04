@@ -1,0 +1,10 @@
+/* @import 'bulma.css'; */
+/* @import 'bulma/css/bulma.css' */
+
+.tile {
+  height: 50vh;
+  overflow-y: scroll;
+  /* min-height: 50vh;
+  max-height: 80vh; */
+  /* text-overflow: scroll; */
+}

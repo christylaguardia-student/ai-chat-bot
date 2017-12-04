@@ -4,16 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Simple Speech Chat Bot</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>Christy La Guardia's Chat Bot</title>
 </head>
 <body>
-  <h1>Simple Speech Chat Bot</h1>
-  <button>Talk</button>
-  <!-- TODO: convert to message area -->
-  <div id="user-message"></div>
-  <div id="bot-message"></div>
+  <section class="section is-vcentered">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-  <script src="script.js"></script>
+    <!-- <div class="hero">
+      <div class="container has-text-centered">
+        <h1 class="title">AI Chat Bot</h1>
+        <p class="subtitle">by Christy La Guardia</p>
+      </div>
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half is-narrow">
+          <ul class="field"></ul>
+
+          <div class="field has-addons has-addons-centered">
+            <div class="control">
+              <input class="input" id="user-message" type="text" placeholder="Talk to the bot...">
+            </div>
+            <div class="control">
+              <button class="button is-info" onclick="chat()">
+                Send
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container is-centered">
+
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Simple Chat Bot</p>
+            <p class="subtitle">by Christy La Guardia</p>
+
+            <p class="field">
+              <a class="button" href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
+                <span class="icon">
+                  <i class="fa fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </p>
+
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum
+                ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="tile is-parent is-8"> 
+          <article class="tile is-child box">
+            <div class="content">
+
+              <ul id="messages" class="field"></ul>
+                
+              <div class="field has-addons has-addons-centered">
+                <div class="control">
+                  <input id="user-message" class="input" type="text" placeholder="Talk to the bot...">
+                </div>
+                <div class="control">
+                  <button class="button is-info" onclick="chat()">
+                    Send
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
