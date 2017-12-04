@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const apiai = require('./lib/apiai');
+const dialogflow = require('./lib/dialogflow.api');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
@@ -17,7 +17,7 @@ io.on('connection', socket => {
   console.log('user connected!');
 
   socket.on('chat message', userMsg => {
-    apiai
+    dialogflow
       .getBotReply(userMsg)
       .then(botReply => socket.emit('bot reply', botReply));
   });
