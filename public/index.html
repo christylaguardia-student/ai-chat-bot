@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  <title>Shopping Chat Bot</title>
+  <title>Online Shopping Chat Bot</title>
 </head>
 <body>
   <section class="section is-vcentered">
@@ -42,8 +42,8 @@
           <article class="tile is-child box">
             <div class="content">
               <div class="field has-addons">
-                <div class="control">
-                  <input id="user-input" class="input" type="text" autocomplete="off" placeholder="Talk to the bot...">
+                <div class="control is-expanded">
+                  <input id="user-input" class="input is-fullwidth" type="text" autocomplete="off" placeholder="Talk to the bot...">
                 </div>
                 <div class="control">
                   <button class="button is-info" onclick="chat()">
@@ -52,9 +52,6 @@
                 </div>
               </div>
             </div>
-          <!-- </article>
-
-          <article class="tile is-child box"> -->
             <div class="content">
               <div id="messages" class="content"></div>
             </div>
@@ -64,6 +61,8 @@
       </div>
     </div>
 
+    <!-- <iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/53b54184-cc55-496c-ba6a-f76b47e16eac">
+    </iframe> -->
   </section>
 
   <script src="/socket.io/socket.io.js"></script>
