@@ -1,59 +1,20 @@
-'use strict';
 
 const socket = io();
-const userMessage = document.querySelector('#user-message');
-const botMessage = document.querySelector('#bot-message');
 
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-
-recognition.lang = 'en-US';
-recognition.interimResults = false;
-
-////////// event listeners //////////
-
-document.querySelector('button').addEventListener('click', () => recognition.start());
-
-recognition.addEventListener('speechstart', () => console.log('speech detected'));
-
-recognition.addEventListener('result', e => {
-  console.log('result detected', e.results);
-
-  // let last = e.results.length - 1;
-  // let text = e.results[last][0].transcript;
-  const text = e.results[0][0].transcript;
-  console.log('text', text);
-  userMessage.textContent = `you: ${text}`;
-
-  console.log('confidence', e.results[0][0].confidence);
-
-  socket.emit('chat message', text);
+// event listener
+socket.on('bot reply', botReply => {
+  addMessage('bot', botReply);
 });
 
-recognition.addEventListener('speechend', () => recognition.stop());
-
-recognition.addEventListener('error', e => botMessage.textContent = `Error: ${e.error}`);
-
-
-
-
-// TODO: add constructor function for adding messages to the page
-
-
-////////// speech setup //////////
-
-function synthVoice(text) {
-  const synth = window.speechSynthesis;
-  const utterance = new SpeechSynthesisUtterance();
-
-  utterance.text = text;
-
-  synth.speak(utterance);
+function chat() {
+  const userInput = document.getElementById('user-message').value;
+  addMessage('you', userInput);
+  socket.emit('chat message', userInput);
 }
 
-// set the bot message
-socket.on('bot reply', replyText => {
-  synthVoice(replyText);
-  if (replyText == '') replyText = '(no answer...)';
-  botMessage.textContent = replyText;
-});
+function addMessage(from, text) {
+  let el = document.createElement('li');
+  el.innerHTML = `${from}: ${text}`;
+  el.setAttribute('class', from);
+  document.querySelector('ul').append(el);
+}
