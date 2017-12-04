@@ -1,7 +1,7 @@
 
 const socket = io();
 
-// event listener
+// event listeners
 socket.on('bot reply', botReply => {
   addMessage('bot', botReply);
 });
@@ -15,7 +15,8 @@ document.getElementById('user-input').addEventListener('keyup', e => {
 
 function chat() {
   const userInput = document.getElementById('user-input');
-  if (userInput) {
+  
+  if (userInput.value) {
     addMessage('you', userInput.value);
     socket.emit('chat message', userInput.value);
     userInput.value = '';
@@ -23,7 +24,6 @@ function chat() {
 }
 
 function addMessage(from, text) {
-
   const messages = document.getElementById('messages');
   let el1 = document.createElement('p');
   let el2 = document.createElement('span');
