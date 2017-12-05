@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  <title>Online Shopping Chat Bot</title>
+  <title>eBay Shopping Chat Bot</title>
 </head>
 <body>
   <section class="section is-vcentered">
@@ -14,31 +16,34 @@
         <div class="tile is-parent is-4">
           <article class="tile is-child box">
             <div class="content">
-              <p class="title">Shopping Chat Bot</p>
+              <p class="title">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                 eBay Shopping Chat Bot
+              </p>
               <p class="subtitle">
                 by <a href="http://www.laguardia.io" target="_blank">Christy La Guardia</a>
               </p>
-              <p>A simple chat bot build using the socket.io real-time engine, a custom Dialogflow AI agent &amp; API and the Bulma CSS framework.</p>
+              <h3>About</h3>
+              <p>A simple JavaScript chat bot built with NodeJS, the ExpressJS web framework and the Socket.io real-time engine.</p>
+              <p>The AI chat functionality was configured with a custom DialogFlow agent and integrated into the web app with the DialogFlow
+                API.</p>
+              <p>eBay product and product best deal searches are handled with the eBay Finding API, hosted on a separte cloud service.</p>
+              <p>The UI was designed on the Bulma CSS framework.</p>
+              <h3>Source Code</h3>
               <p>
                 <a href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
-                  View my source code on GitHub.
+                  <i class="fa fa-github"></i> Web App
                 </a>
               </p>
-              <div>
-                <h3>Sample Messages:</h3>
-                <p><span class="tag is-primary is-medium is-rounded">I want to buy a T-Shirt.</span></p>
-                <p><span class="tag is-primary is-medium is-rounded">Track my order.</span></p>
-                <p><span class="tag is-primary is-medium is-rounded">I'm looking for a gift.</span></p>
-                <p><span class="tag is-primary is-medium is-rounded">Cancel my order.</span></p>
-                <p><span class="tag is-primary is-medium is-rounded">Check what's in my cart.</span></p>
-                <p><span class="tag is-primary is-medium is-rounded">Do you have any special offers.</span></p>
-              </div>
-              
+              <p>
+                <a href="https://github.com/christylaguardia/ai-chat-bot-webhook" target="_blank">
+                  <i class="fa fa-github"></i> Chat Bot Webhook (ebay API)
+                </a>
+              </p>
             </div>
           </article>
         </div>
-
-        <div class="tile is-parent is-vertical is-8"> 
+        <div class="tile is-parent is-vertical is-4"> 
           <article class="tile is-child box">
             <div class="content">
               <div class="field has-addons">
@@ -46,7 +51,7 @@
                   <input id="user-input" class="input is-fullwidth" type="text" autocomplete="off" placeholder="Talk to the bot...">
                 </div>
                 <div class="control">
-                  <button class="button is-info" onclick="chat()">
+                  <button class="button is-info" onclick="index.chat()">
                     Send
                   </button>
                 </div>
@@ -57,14 +62,23 @@
             </div>
           </article>
         </div>
-
+        <div class="tile is-parent is-4">
+          <article class="tile is-child box">
+            <div class="content">
+              <h3>Sample Messages</h3>
+              <p class="notification">I want to buy VR goggles</p>
+              <p class="notification">I need a new computer</p>
+              <p class="notification">search iPhone</p>
+              <p class="notification">what's the best deal on cameras</p>
+              <p class="notification">find me a deal on nike shoes</p>
+              <p class="notification">what are you</p>
+              <p class="notification">tell me a joke</p>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
-
-    <!-- <iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/53b54184-cc55-496c-ba6a-f76b47e16eac">
-    </iframe> -->
   </section>
-
   <script src="/socket.io/socket.io.js"></script>
   <script src="/script.js"></script>
 </body>
