@@ -14,7 +14,7 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-1">
-          A simple NodeJS chat bot for finding for eBay products.
+          A simple NodeJS chat bot for searching eBay products.
         </h1>
         <h2 class="subtitle">
           <span>by <a href="http://www.laguardia.io" target="_blank">Christy La Guardia</a></span>
@@ -48,7 +48,7 @@
                 <li>
                   <a href="https://bulma.io/">Bulma</a> - UI framework</li>
                 <li>
-                  <a href="http://expressjs.com/">Express</a> - web framework</li>
+                  <a href="http://expressjs.com/">Express</a> - Web framework</li>
                 <li>
                   <a href="https://socket.io/">socket.io</a> - Real-time chat engine</li>
                 <li>
@@ -63,15 +63,40 @@
 
           <div class="level-item">
             <div class="content">
+              <h3>How It Works</h3>
+              <p>Ask the chat bot about a product.</p>
+              <p>You can specify <em>new</em> or <em>used</em> condition.</p>
+              <p>It will search eBay's inventory and return a top match.</p>
+              <p>The search results include:</p>
+              <ol>
+                <li>Product title</li>
+                <li>Current bid price</li>
+                <li>Product URL</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="level-item">
+            <div class="content">
               <h3>Sample Messages</h3>
               <ul>
-                <li>I want to buy VR goggles</li>
-                <li>I need a new computer</li>
-                <li>search iPhone</li>
-                <li>what's the best deal on cameras</li>
-                <li>find me a deal on nike shoes</li>
-                <li>what are you</li>
-                <li>tell me a joke</li>
+                <p class="field">
+                  <span class="tag is-primary is-medium">I want to buy VR goggles</span>
+                </p>
+                <p class="field">
+                  <span class="tag is-primary is-medium">I need a new computer</span>
+                  <span class="tag is-primary is-medium">find used laptop</span>
+                </p>
+                <p class="field">
+                  <span class="tag is-primary is-medium">I'm looking for a used chandelier</span>
+                </p>
+                <p class="field">
+                  <span class="tag is-primary is-medium">search iphone</span>
+                  <span class="tag is-primary is-medium">do you have guitars</span>
+                </p>
+                <p class="field">
+                  <span class="tag is-primary is-medium">tell me a joke</span>
+                </p>
               </ul>
             </div>
           </div>
@@ -85,10 +110,11 @@
       <div class="columns">
         <div class="column box is-half is-offset-one-quarter" style="min-height: 50vh">
           <div class="content">
+            <h3>Find a new or used product on eBay</h3>
             <div class="field has-addons">
               <div class="control is-expanded">
                 <p class="control has-icons-left">
-                  <input id="user-input" class="input" type="text" autocomplete="off" placeholder="talk to the bot...">
+                  <input id="user-input" class="input" type="text" autocomplete="off" placeholder="ask about a product">
                   <span class="icon is-small is-left">
                     <i class="fa fa-comment-o"></i>
                   </span>

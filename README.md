@@ -2,33 +2,41 @@
 
 ### [Go to the live app](https://ebay-chat-bot.herokuapp.com/)
 
-A simple NodeJS chat bot that allows you to search for eBay products using the eBay Finding API. There are two types of product keyword searches: top result and top deal result. Both responses include the product title, current bid price and eBay product URL.
+A simple NodeJS chat bot that allows you to search for eBay products using the eBay Finding API. There are two types of product keyword searches: new condition and used condition. Both responses include the product title, current bid price and eBay product URL. To search used products you need to include "used" in the message. To search used products you need to include "new" in the message. If you do not include the condition, it will default to new.
 
-Sample Message | Type of Bot Response
--- | --
-`I want to buy VR goggles` | top product search
-`I need a new computer` | top product search
-`search iPhone` | top product search
-`what's the best deal on cameras` | top product deals search
-`find me a deal on nike shoes` | top product deals search
-`what are you` | small talk
-`tell me a joke` | random dad joke
+Sample Messages
+
+* I want to buy VR goggles
+* I need a new computer
+* find used laptop
+* I'm looking for a used chandelier
+* search iphone
+* do you have guitars
+* tell me a joke
 
 Sample Bot Response
 
-`I found this deal on "laptop" for you on eBay: HP - 15.6" Laptop - AMD A6-Series - 4GB Memory - AMD Radeon R4 - 500GB Hard D... The current bid price is $279.99. Here's the link: http://www.ebay.com/itm/HP-15-6-Laptop-AMD-A6-Series-4GB-Memory-AMD-Radeon-R4-500GB-Hard-D-/322837881101`
+`I found this new "iphone" for you on eBay: Brand New Sealed Apple iPhone 6 32GB - Space Gray (Total Wireless) Smartphone The current bid price is $179.99. Here's the link: http://www.ebay.com/itm/Brand-New-Sealed-Apple-iPhone-6-32GB-Space-Gray-Total-Wireless-Smartphone-/322922642596`
 
 ## Prerequisites
 
-* Dialogflow Client API key
-* Dialogflow agent with web hook
-  * Web Service URL `https://ai-chat-bot-webhook.herokuapp.com/`
-  * [View source code](https://github.com/christylaguardia/ai-chat-bot-webhook)
+Dialogflow:
+
+* Agent
+* Web hook for fulfillment
+* Client API key
+
+## Web Service
+
+To enable the Dialogflow agent to make a third-party api call, I build a simple web service.
+
+* URL `https://ai-chat-bot-webhook.herokuapp.com/`
+* [View source code](https://github.com/christylaguardia/ai-chat-bot-webhook)
 
 ## Built With
 
 * [Bulma](https://bulma.io/) - UI framework
-* [Express](http://expressjs.com/) - web framework
+* [Express](http://expressjs.com/) - Web framework
 * [socket.io](https://socket.io/) - Real-time chat engine
 * [Dialogflow](https://dialogflow.com/) - Chat bot platform and API
 * [eBay Finding API](http://developer.ebay.com/DevZone/finding/CallRef/findItemsByKeywords.html) - eBay inventory keyword search
