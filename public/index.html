@@ -4,81 +4,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  <title>eBay Shopping Chat Bot</title>
+  <title>eBay Chat Bot</title>
 </head>
 <body>
-  <section class="section is-vcentered">
-    <div class="container is-centered">
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <article class="tile is-child box">
+  <section class="hero is-medium is-info is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">
+          A simple NodeJS chat bot for finding for eBay products.
+        </h1>
+        <h2 class="subtitle">
+          <span>by <a href="http://www.laguardia.io" target="_blank">Christy La Guardia</a></span>
+        </h2>
+        <p class="field">
+          <a class="button is-link" href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
+            <span class="icon is-small">
+              <i class="fa fa-github"></i>
+            </span>
+            <span>Web App Source Code</span>
+          </a>
+          <a class="button is-link" href="https://github.com/christylaguardia/ai-chat-bot-webhook" target="_blank">
+            <span class="icon is-small">
+              <i class="fa fa-github"></i>
+            </span>
+            <span>Bot Web Service Source Code</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="level">
+        
+          <div class="level-item">
             <div class="content">
-              <p class="title">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                 eBay Shopping Chat Bot
-              </p>
-              <p class="subtitle">
-                by <a href="http://www.laguardia.io" target="_blank">Christy La Guardia</a>
-              </p>
-              <h3>About</h3>
-              <p>A simple JavaScript chat bot built with NodeJS, the ExpressJS web framework and the Socket.io real-time engine.</p>
-              <p>The AI chat functionality was configured with a custom DialogFlow agent and integrated into the web app with the DialogFlow
-                API.</p>
-              <p>eBay product and product best deal searches are handled with the eBay Finding API, hosted on a separte cloud service.</p>
-              <p>The UI was designed on the Bulma CSS framework.</p>
-              <h3>Source Code</h3>
-              <p>
-                <a href="https://github.com/christylaguardia/ai-chat-bot" target="_blank">
-                  <i class="fa fa-github"></i> Web App
-                </a>
-              </p>
-              <p>
-                <a href="https://github.com/christylaguardia/ai-chat-bot-webhook" target="_blank">
-                  <i class="fa fa-github"></i> Chat Bot Webhook (ebay API)
-                </a>
-              </p>
+              <h3>Built With</h3>
+              <ul>
+                <li>
+                  <a href="https://bulma.io/">Bulma</a> - UI framework</li>
+                <li>
+                  <a href="http://expressjs.com/">Express</a> - web framework</li>
+                <li>
+                  <a href="https://socket.io/">socket.io</a> - Real-time chat engine</li>
+                <li>
+                  <a href="https://dialogflow.com/">Dialogflow</a> - Chat bot platform and API</li>
+                <li>
+                  <a href="http://developer.ebay.com/DevZone/finding/CallRef/findItemsByKeywords.html">eBay Finding API</a> - eBay inventory keyword search</li>
+                <li>
+                  <a href="https://icanhazdadjoke.com/">icanhazdadjoke API</a> - Because this is a funny bot</li>
+              </ul>
             </div>
-          </article>
-        </div>
-        <div class="tile is-parent is-vertical is-4"> 
-          <article class="tile is-child box">
-            <div class="content">
-              <div class="field has-addons">
-                <div class="control is-expanded">
-                  <input id="user-input" class="input is-fullwidth" type="text" autocomplete="off" placeholder="Talk to the bot...">
-                </div>
-                <div class="control">
-                  <button class="button is-info" onclick="index.chat()">
-                    Send
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="content">
-              <div id="messages" class="content"></div>
-            </div>
-          </article>
-        </div>
-        <div class="tile is-parent is-4">
-          <article class="tile is-child box">
+          </div>
+
+          <div class="level-item">
             <div class="content">
               <h3>Sample Messages</h3>
-              <p class="notification">I want to buy VR goggles</p>
-              <p class="notification">I need a new computer</p>
-              <p class="notification">search iPhone</p>
-              <p class="notification">what's the best deal on cameras</p>
-              <p class="notification">find me a deal on nike shoes</p>
-              <p class="notification">what are you</p>
-              <p class="notification">tell me a joke</p>
+              <ul>
+                <li>I want to buy VR goggles</li>
+                <li>I need a new computer</li>
+                <li>search iPhone</li>
+                <li>what's the best deal on cameras</li>
+                <li>find me a deal on nike shoes</li>
+                <li>what are you</li>
+                <li>tell me a joke</li>
+              </ul>
             </div>
-          </article>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-large is-light is-bold">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column box is-half is-offset-one-quarter" style="min-height: 50vh">
+          <div class="content">
+            <div class="field has-addons">
+              <div class="control is-expanded">
+                <p class="control has-icons-left">
+                  <input id="user-input" class="input" type="text" autocomplete="off" placeholder="talk to the bot...">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="control">
+                <button class="button is-info" onclick="index.chat()">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div id="messages" class="content"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/script.js"></script>
 </body>
